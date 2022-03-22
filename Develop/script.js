@@ -14,7 +14,7 @@ function generatePassword(){
   var passwordText = document.querySelector("#password");
 
   if (passwordLength < 8 || passwordLength > 128){
-    window.alert("Password must be betten 8 and 128 characters.")
+    window.alert("Password must be betten 8 and 128 characters.");
     window.location.reload();
   }
 
@@ -43,9 +43,13 @@ function generatePassword(){
         password = password += symbols.charAt(Math.floor(Math.random() * symbols.length));
       }
 
+      if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSymbols) {
+        window.alert ("Password must contain at least 1 character type.  Please try again.");
+        return "";
+      }
+
       passwordText.value = password;
       console.log(password);
-
     }
   }
 }
