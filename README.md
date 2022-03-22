@@ -14,6 +14,6 @@ Link to deployed page: https://arankin7.github.io/password-generator/
 
 
 ### Images
-![] (Images/scrnShot1.png)
+![](Images/scrnShot1.png)
 
-![] (Images/scrnShot2.png)
+![](Images/scrnShot2.png)
