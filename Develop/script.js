@@ -5,18 +5,12 @@ var symbols = "!@#$%^&*()_+{}|:?><[]";
 var alphaLower = "abcdefghijklmnopqrstuvwxyz";
 var alphaUpper = alphaLower.toUpperCase();
 
-
-
 function generatePassword(){
   
   // Clears password 
   var password = "";
 
-
-  // Password variables
   var passwordLength = prompt("How long would you like your password to be? Password must be between 8-128 characters.");
-  
-
   var passwordText = document.querySelector("#password");
 
   if (passwordLength < 8 || passwordLength > 128){
@@ -50,26 +44,33 @@ function generatePassword(){
       }
 
       passwordText.value = password;
+      console.log(password);
 
     }
-
   }
-
-  console.log(password);
-  
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+var copyPassword = document.querySelector("#copy")
+
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
   
 }
 
+function copy() {
+  var copyPassword = document.querySelector("#password");
+  navigator.clipboard.writeText(copyPassword.value);
+  window.alert("Password Copied to Clipboard");
+}
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+copyPassword.addEventListener("click", copy);
+
